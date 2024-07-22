@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="wrap">
+        <section>
+            <div class="outer">
+               <div class="faq">
+                <h1>FAQ</h1>
+                <img src="images/icons8-faq-80.png" alt="">
+               </div> 
+                <div class="inner">
+                    <h2>Q. Why do my appointments feel so short?</h2>
+                    <img class="icon" data-icon="show1" src="images/icons8-more-48.png" alt="">
+                </div>
+                <div>
+                    <p  class="hide"  id="show1">A. MSP (Medical Services Plan) limits us to a certain time period per appointment. Our doctors care for you and try their best to give the best care to patients, but please note that we are limited in time. You are always welcome to book appointments as often as you like.</p>
+                </div>
+                <div class="inner">
+                    <h2>Q. What is your clinic policy?
+                    </h2>
+                    <img  class="icon " data-icon="show2" src="images/icons8-more-48.png" alt="">
+                </div>
+                <div>
+                    <p  class="hide"  id="show2">A. You can read over our clinic policy. Patients should have received and signed a copy of the clinic policy when they first became patients at FCM. We may ask patients that don't have a clinic policy on file to sign a new one. </p>
+                </div>
+        
+            <div class="btndiv">
+                <button >Click Here</button>
+            </div>
+            <div class="popup ">
+                <div class="popupineer">
+                <p>Hello how can i help you</p>
+                <img id="cross" src="images/icons8-cross-48.png" alt="">
+                </div>
+            </div>
+            </div>
+    </div>
+    <!-- jsquer -->
+    <script>
+        $(document).ready(function(){
+            $(".inner").on({
+                mouseenter: function(){
+                 $(this).addClass("first")
+                 },   
+                 mouseleave: function(){
+                $(this).removeClass("first");
+              }
+            })
+            $(".icon").click(function(){
+                 var tab_id = $(this).attr('data-icon')
+                 $(this).addClass("showtab")
+                 $("#"+tab_id).slideToggle()
+               
+            })  
+            $("button").click(function() {
+            $(".popup").fadeIn(500);
+});
+         $("#cross").click(function() {
+         $(".popup").fadeOut(500);
+});
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
